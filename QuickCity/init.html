@@ -25,8 +25,70 @@
                 </div>
         </nav>
 
+        <!-- CARROUSEL -->
+        <div class="container">
+          <div class="wall wall-1" id="wall-1">
+            <div class="arrow-left">
+              <a class="arrow-left-img" href="#wall-3">Voltar</a>
+            </div>
+              <h1>carrosel numero - 1</h1>
+              <a href="#wall-2">Avançar</a>
+          </div>
+          
+          <div class="wall wall-2" id="wall-2">
+              <a href="#wall-1">Voltar</a>
+              <h1>carrosel numero - 2</h1>
+              <a href="#wall-3">Avançar</a>
+          </div>
+      
+          <div class="wall wall-3" id="wall-3">
+              <a href="#wall-2">Voltar</a>
+              <h1>carrosel numero - 3</h1>
+              <a href="#wall-1">Avançar</a>
+          </div>
+      </div>
+<!--CSS PARA O CARROUSEL, SEPARAR DEPOIS-->
+<style>
+  .arrow-left{
+  
+      text-align: left;
+      margin-left: 0cm;
+      }
 
 
+.container{
+    margin-left: 0cm;
+    margin-right: 0cm;
+    height: 250px;  
+    width: auto;
+    text-align: center;
+   
+}
+
+.wall{
+  
+    display: none;
+    width: 141%;
+    height: 141%;
+    border-style:ridge; 
+}
+
+ /* elementos do carrousel*/
+.wall-1{ background-image: url(image/icon-carrousel-1.jpg);}
+.wall-2{ background-image: url(image/icon-carrousel-2.jpg);}
+.wall-3{ background-image: url(image/icon-carrousel-3.jpg);}
+
+.wall:target{
+  display: block;
+}
+</style>
+
+
+
+<!--js PARA O CARROUSEL, SEPARAR DEPOIS-->
+<script> 
+window.location = "#wall-1";
+</script>
         
 </body>
 </html>
