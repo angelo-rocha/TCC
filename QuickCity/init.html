@@ -6,27 +6,113 @@
     <title> Quick City </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+   
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script src="inicio.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("a[rel=modal]").click( function(ev){
+      ev.preventDefault();
+
+      var id = $(this).attr("href");
+
+      var alturaTela = $(document).height();
+      var larguraTela = $(window).width();
+
+      //colocando o fundo preto
+      $('#mascara').css({'width':larguraTela,'height':alturaTela});
+      $('#mascara').fadeIn(1000);	
+      $('#mascara').fadeTo("slow",0.8);
+
+      var left = ($(window).width() /2) - ( $(id).width() / 2 );
+      var top = ($(window).height() / 2) - ( $(id).height() / 2 );
+      
+      $(id).css({'top':top,'left':left});
+      $(id).show();	
+     });
+
+     $("#mascara").click( function(){
+       $(this).hide();
+       $(".window").hide();
+     });
+
+     $('.fechar').click(function(ev){
+       ev.preventDefault();
+       $("#mascara").hide();
+       $(".window").hide();
+     });
+  });
+</script>
+
 </head>
 <body>
+
+
         <!--NavBar-->
         <nav class="navbar navbar-light bg-dark justify-content-between">
             <a class="navbar-brand" href="init.html">Quick City</a>
             <a class="nav-item nav-link">Quick City</a>
-            <div id="formBtn"class="form-inline">            
-               <a href="index.html"><button name="login" class="btn btn-outline-success my-2 my-sm-0" form="formBtn">Entrar</button> </a>| 
-               <a href="cadastro.html"><button name="cadastro" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Cadastrar-se</button></a>
+            <div id="formBtn"class="form-inline">      
+              <!--Teste Modal-->      
+              <a href="#Entrar" rel="modal"><button name="login" class="btn btn-outline-success my-2 my-sm-0" form="formBtn">Entrar</button> </a>| 
+               <a href="#Cadastrar" rel="modal"><button name="cadastro" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Cadastrar-se</button></a>
             </div>         
           </nav>
-     
-    <!--Carrosel-->
+
+    <!--Modal de LOGIN-->
+    <div id="mascara"></div>
+          <div class="window" id="Entrar">
+              
+              <div class="loginbox">
+                <a href="#" class="fechar">X Fechar</a> 
+                <img src="image/avatar.png" class="avatar">                  
+                  <h1>Entrar</h1>
+                  
+                      <form action="cadastro.html" onsubmit="return VerificaLogin(this)">
+                          <p>Usuário</p>
+                          <input name="user" type="text" placeholder="Insira seu usuário">
+                          <p>Senha</p>
+                          <input name="password" type="password" name="" placeholder="Insira sua senha">
+                         <input type="submit" value="Entrar">
+                          <a href="">Esqueceu sua senha?</a></br>
+                          <a href="">Não tem uma conta?</a></br>
+                      </form>
+   
+                  </div>  
+          </div>
+
+          <!--Modal de Cadastro-->
+          <div class="window" id="Cadastrar">
+            <div class="loginbox">
+                <img src="image/avatar.png" class="avatar">
+                <h1>Cadastrar</h1>
+                    <form action="cadastro.php" method="POST">
+                        <p>E-mail:</p>
+                        <input type="text" name="email" placeholder="Digite seu e-mail">
+                        <p>Usuário:</p>
+                        <input type="text" name="usuario" placeholder="Digite seu usuário">
+                        <p>Senha:</p>
+                        <input type="password" name="senha" placeholder="Crie uma senha">
+                        <p>Confirmar Senha:</p>
+                        <input type="password" name="" placeholder="Confirme sua senha">
+                        
+                        <input type="submit" name="" value="Cadastrar">
+                        <a href="">Já tem uma conta?</a></br>
+                    </form>
+                
+                
+                </div>
+            </div>
+
+
+
+      
+    
+            <!--Carrosel-->
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -54,9 +140,6 @@
         </a>
       </div>
 
-<script> 
-$('.carousel').carousel()
-</script>
         
 </body>
 </html>
