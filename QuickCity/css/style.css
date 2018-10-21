@@ -10,8 +10,21 @@ body{
 .loginbox {
     width: 500px;
     height: 500px;
-    background: #93BDE2;
-    color: black;
+    background: #000;
+    color: #FFF;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;  
+    padding: 70px 30px;
+}
+
+.cadastrobox {
+    width: 500px;
+    height: 500px;
+    background: #000;
+    color: #FFF;
     top: 50%;
     left: 50%;
     position: absolute;
@@ -42,19 +55,40 @@ h1{
     font-weight: bold;
 }
 
+.cadastrobox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
 .loginbox input{
     width: 100%;
     margin-bottom: 15px;
     }
 
+    .cadastrobox input{
+        width: 100%;
+        margin-bottom: 15px;
+        }
 .loginbox input[type="text"], input[type="password"]
 {
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #FFF;
     background: transparent;
     outline: none;
     height: 30px;
-    color: black;
+    color: #FFF;
+    font-size: 16px;
+}
+
+.cadastrobox input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #FFF;
+    background: transparent;
+    outline: none;
+    height: 30px;
+    color: #FFF;
     font-size: 16px;
 }
 
@@ -63,28 +97,57 @@ h1{
     border: none;
     outline: none;
     height: 40px;
-    background: yellow;
-    color: black;
+    background: #027223;
+    color: #FFF;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.cadastrobox input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #002677;
+    color: #FFF;
     font-size: 18px;
     border-radius: 20px;
 }
 
 .loginbox input[type="submit"]:hover{
     cursor: pointer;
-    background: #ffc107;
-    color: #000;
+    background: #269F2A;
+    color: #FFF;
+}
+
+.cadastrobox input[type="submit"]:hover{
+    cursor: pointer;
+    background: #212B97;
+    color: #FFF;
 }
 
 .loginbox a{
     text-decoration: none;
     font-size: 12px;
     line-height: 20px;
-    color: black;
+    color: #FFF;
+}
+
+.cadastrobox a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: #FFF;
 }
 
 .loginbox a:hover
 {
-   color: #ffc107; 
+   color: #269F2A; 
+}
+
+.cadastrobox a:hover
+{
+   color: #212B97; 
 }
 
 /*CSS PARA A MODAL */
