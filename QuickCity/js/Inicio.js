@@ -1,4 +1,4 @@
-
+   
 $(document).ready(function(){
 	//carrousel
 	$("a[rel=modal]").click( function(ev){
