@@ -31,7 +31,7 @@ $(document).ready(function(){
 		 $("#mascara").hide();
 		 $(".window").hide();
 	 });
-
+  
 
 	 $("input").blur(function(){
 		if($(this).val() == "")
