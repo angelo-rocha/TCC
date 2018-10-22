@@ -1,3 +1,18 @@
+/* ADAPTANDO A NAVBAR */
+
+.navbar {
+    padding: .1px 1rem;
+  }
+  
+   .cor{
+        
+        text-align: justify;  
+          font-size: xx-large;
+         text-emphasis-color: #D3D3D3;
+         -webkit-text-fill-color: #D3D3D3;
+        }
+
+/* =========== */
 
 body{
     margin: 0;

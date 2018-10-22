@@ -12,58 +12,25 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    $("a[rel=modal]").click( function(ev){
-      ev.preventDefault();
-
-      var id = $(this).attr("href");
-
-      var alturaTela = $(document).height();
-      var larguraTela = $(window).width();
-
-      //colocando o fundo preto
-      $('#mascara').css({'width':larguraTela,'height':alturaTela});
-      $('#mascara').fadeIn(1000);	
-      $('#mascara').fadeTo("slow",0.8);
-
-      var left = ($(window).width() /2) - ( $(id).width() / 2 );
-      var top = ($(window).height() / 2) - ( $(id).height() / 2 );
-      
-      $(id).css({'top':top,'left':left});
-      $(id).show();	
-     });
-
-     $("#mascara").click( function(){
-       $(this).hide();
-       $(".window").hide();
-     });
-
-     $('.fechar').click(function(ev){
-       ev.preventDefault();
-       $("#mascara").hide();
-       $(".window").hide();
-     });
-  });
-</script>
-
+<script src="js/Inicio.js"></script>
 </head>
+
 <body>
 
 
         <!--NavBar-->
         <nav class="navbar navbar-light bg-dark justify-content-between">
-            <a class="navbar-brand" href="init.html">Quick City</a>
-            <a class="nav-item nav-link">Quick City</a>
+            <label class="nav-item nav-link cor">Quick City</label>
+            
             <div id="formBtn"class="form-inline">      
               <!--Teste Modal-->      
-              <a href="#Entrar" rel="modal"><button name="login" class="btn btn-outline-success my-2 my-sm-0" form="formBtn">Entrar</button> </a>| 
+               <a href="#Entrar" rel="modal"><button name="login" class="btn btn-outline-success my-2 my-sm-0" form="formBtn">Entrar</button> </a>|
                <a href="#Cadastrar" rel="modal"><button name="cadastro" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Cadastrar-se</button></a>
             </div>         
           </nav>
-
-    <!--Modal de LOGIN-->
+  
+<!-- MODAIS DE CADASTRO E LOGIN -->
+    
     <div id="mascara"></div>
           <div class="window" id="Entrar">
               
@@ -83,8 +50,7 @@
    
                   </div>  
           </div>
-
-          <!--Modal de Cadastro-->
+  
           <div class="window" id="Cadastrar">
             <div class="cadastrobox">
                 <img src="image/avatar.png" class="avatar">
@@ -105,39 +71,54 @@
                 
                 
                 </div>
-            </div>
-
-
-
-      
-    
-            <!--Carrosel-->
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="image/icon-carrousel-1.jpg" alt="First slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="image/icon-carrousel-2.jpg" alt="Second slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="image/icon-carrousel-3.jpg" alt="Third slide">
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+                  </div>      
+                  
+          <!--CARROSEL-->
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src="image/icon-carrousel-1.jpg" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="image/icon-carrousel-2.jpg" alt="Second slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="image/icon-carrousel-3.jpg" alt="Third slide">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+        <br>
+        <div class="jumbotron jumborota">
+           <h1 class="lead">
+             <strong>
+              Verifique a sua rota e os melhores horários aqui
+             </strong>
+            </h1> 
+            <a href="https://editor.mobilibus.com/web/timetable/27b4n" target="_blank"> <button class="btn btn-large btn-primary btn-block">
+               Clique aqui
+           </button>
+           </a>
+          <style>
+            .jumborota
+            {
+              height: 230px;
+              width: 40%;
+            }
+          </style>
+        </div>      
 
         
 </body>
