@@ -16,8 +16,6 @@
 </head>
 
 <body>
-
-
         <!--NavBar-->
         <nav class="navbar navbar-light bg-dark justify-content-between">
             <label class="nav-item nav-link cor">Quick City</label>
@@ -38,11 +36,11 @@
                 <img src="image/avatar.png" class="avatar">                  
                   <h1>Entrar</h1>
                   
-                      <form action="" onsubmit="return VerificaLogin(this)">
+                      <form action="php/login.php" method="POST" onsubmit="return VerificaLogin(this)">
                           <p>Usuário</p>
-                          <input name="user" type="text" placeholder="Insira seu usuário">
+                          <input name="usuario" type="text" placeholder="Insira seu usuário">
                           <p>Senha</p>
-                          <input name="password" type="password" name="" placeholder="Insira sua senha">
+                          <input name="senha" type="password" name="" placeholder="Insira sua senha">
                          <input type="submit" value="Entrar">
                           <a href="">Esqueceu sua senha?</a></br>
                           <a href="">Não tem uma conta?</a></br>
@@ -50,12 +48,11 @@
    
                   </div>  
           </div>
-  
           <div class="window" id="Cadastrar">
             <div class="cadastrobox">
                 <img src="image/avatar.png" class="avatar">
                 <h1>Cadastrar</h1>
-                    <form action="cadastro.php" method="POST">
+                    <form action="php/cadastro.php" method="GET ">
                         <p>E-mail:</p>
                         <input type="text" name="email" placeholder="Digite seu e-mail">
                         <p>Usuário:</p>
@@ -71,7 +68,7 @@
                 
                 
                 </div>
-                  </div>      
+          </div>      
                   
           <!--CARROSEL-->
               <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
