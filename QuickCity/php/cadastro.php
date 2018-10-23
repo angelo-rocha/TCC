@@ -3,7 +3,7 @@
 function conectar()
 {
     $servername = "localhost";
-        $database = "db_quickcity";
+    $database = "db_quickcity";
     $username = "root";
     $password = "";
     //check conexão
