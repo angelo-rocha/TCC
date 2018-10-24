@@ -1,4 +1,4 @@
-//Carrega Click da Modal
+//Carrega Click da Modal home
 $(document).ready(function(){
   $("a[rel=modal]").click( function(ev){
     ev.preventDefault();
