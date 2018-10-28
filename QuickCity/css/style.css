@@ -110,7 +110,7 @@ h1{
         margin-bottom: 15px;
         }
 
-.loginbox input[type="text"], input[type="password"]
+.loginbox input[type="text"], input[type="password"], input[type="number"]
 {
     border: none;
     border-bottom: 1px solid #FFF;
