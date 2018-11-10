@@ -132,6 +132,25 @@ h1{
     font-size: 16px;
 }
 
+.verificarota input[type="button"]
+{
+    position: relative;
+    left: 200px;
+    order: none;
+    outline: none;
+    width: 300px;
+    height: 40px;
+    background: #027223;
+    color: #FFF;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.verificarota input[type="button"]:hover{
+    cursor: pointer;
+    background: #269F2A;
+    color: #FFF;
+}
+
 .loginbox input[type="submit"]
 {
     border: none;
