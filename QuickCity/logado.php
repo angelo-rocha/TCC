@@ -116,11 +116,11 @@
 
 
     <!-- BOTOES REFERENTE A TELA LOGADO -->
-        <div class="verificarota">
+    <div class="botoes">
             <a href="https://editor.mobilibus.com/web/timetable/27b4n"><input type="button" value="Consulte sua rota aqui"></a>
-            <a href="#Recarregar" rel="modal"><input type="button" value="Realize sua recarga aqui"></a>  <!--AQUI TAMBÉM-->       
+            <a href="#Recarregar" rel="modal"><input type="button" value="Realize sua recarga aqui"></a>  <!--AQUI TAMBÉM-->
             <a href="#Saldo"><input type="button" value="Consulte seu saldo aqui"></a>                    <!--AQUI SERÁ UM MODAL-->
-         </div>
+        </div>
 
          <div class="window" id="Recarga">
                 <div class="loginbox">

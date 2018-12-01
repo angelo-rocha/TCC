@@ -68,20 +68,48 @@ function VerificaLogin(form){
 
 
 
-function VerificaCadastro(form){
+function VerificaCadastro(){
  
-  var user = form.user.value;
-  var passw = form.password.value;
+  var nome = form2.nome.value;
+  var cpf = form2.cpf.value;
+  var email = form2.email.value;
+  var usuario = form2.usuario.value;
+  var senha = form2.senha.value;
+  var confsenha = form2.confsenha.value;
   
-  if(!user)
+  if(nome == "")
+  {
+    alert("Preencha com seu nome!");
+    validacadastro.nome.focus();
+    return false;
+	}
+	if(cpf == "")
+  {
+    alert("Preencha com seu CPF!");
+    return false;
+  }
+  if(email == "")
+  {
+    alert("Preencha com seu e-mail!");
+    return false;
+  }
+  if(usuario == "")
   {
     alert("Preencha com seu usuário!");
     return false;
-	}
-	if(!passw)
+  }
+  if(senha == "")
   {
     alert("Preencha com sua senha!");
     return false;
+  }
+  if(confsenha == "")
+  {
+    alert("Confirme sua senha!");
+    return false;
+  }
+  if(confsenha != senha){
+    alert("Senha não confere!");
   }
   else
   {

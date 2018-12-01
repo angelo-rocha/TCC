@@ -43,7 +43,7 @@ body{
 
 .cadastrobox {
     width: 550px;
-    height: 550px;
+    height: 610px;
     background: #000;
     color: #FFF;
     top: 50%;
@@ -138,11 +138,12 @@ h1{
     font-size: 16px;
 }
 
-.verificarota input[type="button"]
+.botoes input[type="button"]
 {
     
     position: relative;
-    left: 500px;
+    float: left;
+    left: 300px;
     order: none;
     outline: none;
     width: 300px;
@@ -152,11 +153,13 @@ h1{
     font-size: 18px;
     border-radius: 20px;
 }
-.verificarota input[type="button"]:hover{
+.botoes input[type="button"]:hover{
     cursor: pointer;
     background: #269F2A;
     color: #FFF;
 }
+
+
 
 .loginbox input[type="submit"]
 {
