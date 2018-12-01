@@ -76,6 +76,44 @@
               </div>
         <br>
 
+<!-- MODAIS -->
+<div id="mascara"></div>
+<div class="window" id="Recarregar">
+<div class="loginbox">
+    <h1>Recarregar agora</h1>
+        <form action="cadastro.html" onsubmit="return VerificaLogin(this)">
+            <p>Digite o código do cartão-passe:</p>
+            <input name="codCartao" type="text" placeholder="Exemplo: 654321" maxlenght="6" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+            
+            <form action="">
+            <fieldset>
+                <span>Valor para recarga:<br></span>
+                <label for="cincoreais">
+                    <input id="cincoreais" type="radio" name="valorBand" value="5.00">R$5,00
+                </label>
+                <label for="dezreais">
+                    <input id="dezreais" type="radio" name="valorBand" value="10.00">R$10,00
+                </label>
+                <label for="vintereais">
+                    <input id="vintereais" type="radio" name="valorBand" value="20.00">R$20,00
+                </label>
+                <label for="cinquentareais">
+                    <input id="cinquentareais" type="radio" name="valorBand" value="50.00">R$50,00
+                </label>
+                <label for="cemreais">
+                    <input id="cemreais" type="radio" name="valorBand" value="100.00">R$100,00
+                </label>
+            </fieldset>
+
+        </form>
+           <input type="submit" value="Recarregar">
+        </form>
+    
+    </div>  
+</div>
+
+
+
 
     <!-- BOTOES REFERENTE A TELA LOGADO -->
         <div class="verificarota">
