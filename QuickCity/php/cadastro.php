@@ -14,12 +14,15 @@ function conectar()
     }
     return $conn;
 }
+
 $email = $_POST['email'];
 $usuario = $_POST['usuario'];
 $senha = $_POST['senha'];
+$nome = $_POST['nome'];
+
 $conn = conectar();
- $teste="INSERT INTO cadastro (email,usuario,senha) VALUES('$email','$usuario','$senha')";
+ $teste="INSERT INTO cadastro (email,usuario,senha,nome) VALUES('$email','$usuario','$senha','$nome')";
 mysqli_query($conn,$teste) or die ("ERRO NO INSERT");
 mysqli_close($conn);
-exit('<script>location.href = "init.html"</script>');
+exit('<script>location.href = "http://localhost/xampp/TCC/QuickCity/init.html"</script>');
 ?>

@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <?php
+    session_start();
+    if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['email']) == true))
+    {
+    unset($_SESSION['email']);
+    unset($_SESSION['senha']);
+    exit('<script>location.href = "http://localhost/xampp/TCC/QuickCity/init.html"</script>');
+    }
+    else{
+        $nome = $_SESSION['nome'];
+    }
+    
+    ?>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title> Quick City </title>
@@ -16,63 +29,23 @@
 </head>
 
 <body>
-        <!--NavBar--> 
+        <!--NavBar-->
         <nav class="navbar navbar-light bg-dark justify-content-between">
             <label class="nav-item nav-link cor">Quick City</label>
-
-            <div id="formBtn"class="form-inline">      
-              <!--Modal-->      
-               <a href="#Entrar" rel="modal"><button name="login" class="btn btn-outline-success my-2 my-sm-0" form="formBtn">Entrar</button> </a>|
-               <a href="#Cadastrar" rel="modal"><button name="cadastro" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Cadastrar-se</button></a>
-            </div>         
+            
+            
+              <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle user" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <?php echo "Seja Bem vindo, <strong>$nome</strong>";?>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Recargas Efetuadas</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="init.html">Sair</a>
+        </div>
+      </li>
+                   
           </nav>
-  
-<!-- MODAIS DE CADASTRO E LOGIN -->
-    
-    <div id="mascara"></div>
-          <div class="window" id="Entrar">
-              
-              <div class="loginbox">
-                <img src="image/avatar.png" class="avatar">                  
-                  <h1>Entrar</h1>
-                  
-                      <form action="php/login.php" method="POST" onsubmit="return VerificaLogin(this)">
-                          <p>E-mail:</p>
-                          <input name="email" type="text" placeholder="Insira seu e-mail">
-                          <p>Senha:</p>
-                          <input name="senha" type="password" name="" placeholder="Insira sua senha">
-                         
-                         <input type="submit" value="Entrar">
-                          <a href="">Esqueceu sua senha?</a></br>
-                          <a href="#Cadastrar" rel="modal">Não tem uma conta?</a></br>
-                      </form>
-   
-                  </div>  
-          </div>
-
-
-          <div class="window" id="Cadastrar">
-            <div class="cadastrobox">
-                <img src="image/avatar.png" class="avatar">
-                <h1>Cadastrar</h1>
-                    <form action="php/cadastro.php" method="POST">
-                        <p>Nome:</p>
-                        <input type="text" name="nome" placeholder="Digite seu nome">
-                        <p>E-mail:</p>
-                        <input type="text" name="email" placeholder="Digite seu e-mail">
-                        <p>Usuário:</p>
-                        <input type="text" name="usuario" placeholder="Digite seu usuário">
-                        <p>Senha:</p>
-                        <input type="password" name="senha" placeholder="Crie uma senha">
-                        <p>Confirmar Senha:</p>
-                        <input type="password" name="" placeholder="Confirme sua senha">
-                        <input type="submit" name="" value="Cadastrar">
-                        <a href="#Entrar" rel="modal">Já tem uma conta?</a></br>
-                    </form>
-                
-                
-                </div>
-          </div>      
                   
           <!--CARROSEL-->
               <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -102,10 +75,48 @@
                 </a>
               </div>
         <br>
+
+
+    <!-- BOTOES REFERENTE A TELA LOGADO -->
         <div class="verificarota">
             <a href="https://editor.mobilibus.com/web/timetable/27b4n"><input type="button" value="Consulte sua rota aqui"></a>
-          
-        </div>
+            <a href="#Recarregar" rel="modal"><input type="button" value="Realize sua recarga aqui"></a>  <!--AQUI TAMBÉM-->       
+            <a href="#Saldo"><input type="button" value="Consulte seu saldo aqui"></a>                    <!--AQUI SERÁ UM MODAL-->
+         </div>
+
+         <div class="window" id="Recarga">
+                <div class="loginbox">
+            <h1>Recarregar agora</h1>
+                <form action="cadastro.html" onsubmit="return VerificaLogin(this)">
+                    <p>Digite o código do cartão-passe:</p>
+                    <input name="codCartao" type="text" placeholder="Exemplo: 654321" maxlenght="6" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                    
+                    <form action="">
+                    <fieldset>
+                        <span>Valor para recarga:<br></span>
+                        <label for="cincoreais">
+                            <input id="cincoreais" type="radio" name="valorBand" value="5.00">R$5,00
+                        </label>
+                        <label for="dezreais">
+                            <input id="dezreais" type="radio" name="valorBand" value="10.00">R$10,00
+                        </label>
+                        <label for="vintereais">
+                            <input id="vintereais" type="radio" name="valorBand" value="20.00">R$20,00
+                        </label>
+                        <label for="cinquentareais">
+                            <input id="cinquentareais" type="radio" name="valorBand" value="50.00">R$50,00
+                        </label>
+                        <label for="cemreais">
+                            <input id="cemreais" type="radio" name="valorBand" value="100.00">R$100,00
+                        </label>
+                    </fieldset>
+        
+                </form>
+                   <input type="submit" value="Recarregar">
+                </form>
+                </div>
+            </div>  
+        
 
         
 </body>
