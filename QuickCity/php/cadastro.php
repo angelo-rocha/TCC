@@ -19,8 +19,9 @@ $email = $_POST['email'];
 $usuario = $_POST['usuario'];
 $senha = $_POST['senha'];
 $nome = $_POST['nome'];
+$confsenha = $_POST['confsenha'];
 
-if (($email == "") && ($usuario == "") && ($senha == "") && ($nome == "")){
+if (($email == "") || ($usuario == "") || ($senha == "") || ($nome == "") || ($senha != $confsenha)){
     exit('<script>location.href = "http://localhost/xampp/TCC/QuickCity/init.html"</script>');
 } else {
 
