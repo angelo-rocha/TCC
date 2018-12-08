@@ -85,7 +85,7 @@
             <p>Digite o código do cartão-passe:</p>
             <input name="codCartao" type="text" placeholder="Exemplo: 654321" maxlength="6" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
             
-            <form action="">
+            <form action="php/recarga.php" method="POST">
             <fieldset>
                 <span>Valor para recarga:<br></span>
                 <label for="cincoreais">

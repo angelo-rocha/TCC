@@ -27,24 +27,6 @@ $(document).ready(function(){
 });
 
 
-//carrega lista para verificação do login 
-function carregarLista() {
-	var xhttp;
-	xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-    	if (this.readyState == 4 && this.status == 200) {
-      		document.getElementById('lista').innerHTML = this.responseText;
-    	} else {
-    		document.getElementById('lista').innerHTML = "Erro na execucao do Ajax";
-    	}
-  	};
-  	xhttp.open("POST", "crud.php", true);
-  	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  	xhttp.send("action=lista");
-}
-
-
-
 function VerificaLogin(form){
  
   var user = form.user.value;
@@ -66,8 +48,6 @@ function VerificaLogin(form){
   }
 }
 
-
-
 function VerificaCadastro(){
  
   var nome = form2.nome.value;
@@ -77,35 +57,40 @@ function VerificaCadastro(){
   var senha = form2.senha.value;
   var confsenha = form2.confsenha.value;
   
-  if(nome == "")
+  if(!nome)
   {
     alert("Preencha com seu nome!");
-    validacadastro.nome.focus();
+    form2.nome.focus();
     return false;
 	}
-	if(cpf == "")
+	if(!cpf)
   {
     alert("Preencha com seu CPF!");
+    form2.cpf.focus();
     return false;
   }
-  if(email == "")
+  if(!email)
   {
     alert("Preencha com seu e-mail!");
+    form2.email.focus();
     return false;
   }
-  if(usuario == "")
+  if(!usuario)
   {
     alert("Preencha com seu usuário!");
+    form2.usuario.focus();
     return false;
   }
-  if(senha == "")
+  if(!senha)
   {
     alert("Preencha com sua senha!");
+    form2.senha.focus();
     return false;
   }
-  if(confsenha == "")
+  if(!confsenha)
   {
     alert("Confirme sua senha!");
+    form2.confsenha.focus();
     return false;
   }
   if(confsenha != senha){
@@ -113,8 +98,31 @@ function VerificaCadastro(){
   }
   else
   {
+    form2.submit();
     return true;
   }
 }
 
-;
+function MaskCpf(cpf){
+  if(cpf)
+  {
+     
+        if(cpf.value.length == 11){
+         var retorno = "";
+          var split = cpf.value.split('');
+         for(var x=0; x< split.length; x++)
+         {
+           retorno += split[x];
+           if(x==2)
+           retorno+= ".";
+           if(x==5)
+           retorno+= ".";
+           if(x==8)
+           retorno+= "-";
+         }
+         form2.cpf.value = retorno;
+        }
+ 
+        
+  }
+}

@@ -59,7 +59,7 @@
                         <p>Nome:</p>
                         <input type="text" name="nome" placeholder="Digite seu nome" maxlength="100">
                         <p>CPF:</p>
-                        <input type="text" name="cpf" placeholder="Digite seu CPF" maxlength="11" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                        <input type="text" name="cpf" placeholder="Digite seu CPF" maxlength="14" onblur="MaskCpf(this)">
                         <p>E-mail:</p>
                         <input type="text" name="email" placeholder="Digite seu e-mail" maxlength="100">
                         <p>Usuário:</p>
@@ -68,7 +68,7 @@
                         <input type="password" name="senha" placeholder="Crie uma senha de até 12 caracteres" maxlength="12">
                         <p>Confirmar Senha:</p>
                         <input type="password" name="confsenha" placeholder="Confirme sua senha" maxlength="12">
-                        <input type="submit" name="" value="Cadastrar" onclick="VerificaCadastro()">
+                        <input type="button" class="buttonCadastro" value="Cadastrar" onclick="VerificaCadastro()">
                         <a href="#Entrar" rel="modal">Já tem uma conta?</a></br>
                     </form>
                 
