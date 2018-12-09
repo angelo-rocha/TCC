@@ -32,7 +32,7 @@ if (($codOnibus == "") || ($valor == "") || ($tipoCartao == "") || ($data == "")
     $_SESSION['cartao'] = $codCartao;
 
 $conn = conectar();
- $teste="INSERT INTO recarga (cartaoOnibus,valor,tipo,CartaoBanco,validadeCartao,cvv,dono) VALUES('$codOnibus','$valor','$tipoCartao','$codCartao','$data','$cvv','$nome')";
+ $teste="INSERT INTO recarga (cartaoOnibus,valor,tipo,CartaoBanco,validadeCartao,cvv,dono, dataRecarga) VALUES('$codOnibus','$valor','$tipoCartao','$codCartao','$data','$cvv','$nome', now());";
 mysqli_query($conn,$teste) or die ("ERRO NO INSERT");
 mysqli_close($conn);
 exit('<script>

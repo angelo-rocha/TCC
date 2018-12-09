@@ -140,7 +140,10 @@
 <div class="window" id="ConfirmaDados">
     <div class="loginbox">
     <h1>Confirma os dados a seguir?</h1>               
-         <p> Valor da recarga:</p><input type="text" value="" name="input" disabled>
+            <p> Nome do usuário: </p><input type="text" value="" name="usuario" disabled>
+            <p> Valor da recarga:</p><input type="text" value="" name="valor" disabled>
+            <p> Cartão do Passe:</p><input type="text" value="" name="cartao" disabled>
+         
            <input type="button" value="Confirmar recarga" onclick="recarga(form)">
            <a href="logado.php"><input type="button" value="Cancelar">   
     </div>  
