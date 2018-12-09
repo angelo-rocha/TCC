@@ -81,11 +81,9 @@
 <div class="window" id="Recarregar">
 <div class="loginbox">
     <h1>Recarregar agora</h1>
-        <form action="cadastro.html" onsubmit="return VerificaRecarregar(this)">
+        <form name="form" action="php/recarga.php" method="POST">
             <p>Digite o código do cartão-passe:</p>
             <input name="codCartao" type="text" placeholder="Exemplo: 654321" maxlength="6" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
-            
-            <form action="php/recarga.php" method="POST">
             <fieldset>
                 <span>Valor para recarga:<br></span>
                 <label for="cincoreais">
@@ -105,8 +103,6 @@
                 </label>
             </fieldset>
 
-        </form>
-        <form action="">
             <fieldset>
                 <span><br>Tipo de cartão:<br></span>
                 <label for="cartaocomum">
@@ -116,10 +112,10 @@
                     <input id="cartaoestudantte" type="radio" name="tipoBand" value="1">Estudante
                 </label>
             </fieldset>
-
-        </form>
+        
+        <div>
             <a href="#DadosCartao" rel="modal"><input type="submit" value="Prosseguir"></a>
-        </form>
+        </div>
     
     </div>  
     </div>
@@ -127,44 +123,34 @@
         <!-- PARTE 2 DADOS DO CARTAO --> 
         <div class="window" id="DadosCartao">
 <div class="loginbox">
-    <h1>Recarregar agora</h1>
-        <form action="cadastro.html" onsubmit="return VerificaCartao(this)">
-            <p>Digite o número do cartão de débito/crédito sem espaço:</p>
-            <input name="codCartaoCD" type="text" placeholder="Exemplo: 1234 5678 9012 3456" maxlength="16" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
-            <p> Digite a data de validade do cartão:</p>
-            <input name="valCartaoCD" type="text" placeholder="Exemplo: 12/12" maxlength="5">
-            <p>Digite o CVV do cartão</p>
-            <input name="cvvCartaoCD" type="text" placeholder="Exemplo: 000" maxlength="3" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
-            <p> Digite o nome do dono do cartão:</p>
-            <input name="nomeCartaoCD" type="text" placeholder="Exatamente como consta no cartão">
-        
-
-        </form>
-
-           <a href="#ConfirmaDados" rel="modal"><input type="submit" value="Realizar recarga"></a>
-        </form>
-    
-    </div>  
-</div>
-
-        <div class="window" id="ConfirmaDados">
-<div class="loginbox">
-    <h1>Confirma os dados a seguir?</h1>
-        <form action="cadastro.html" onsubmit="return ConfirmaDados(this)">
-            
+        <h1>Recarregar agora</h1>
+           
+                <p>Digite o número do cartão de débito/crédito sem espaço:</p>
+                <input name="codCartaoCD" type="text" placeholder="Exemplo: 1234 5678 9012 3456" maxlength="16" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                <p> Digite a data de validade do cartão:</p>
+                <input name="valCartaoCD" type="text" placeholder="Exemplo: 12/12" maxlength="5">
+                <p>Digite o CVV do cartão</p>
+                <input name="cvvCartaoCD" type="text" placeholder="Exemplo: 000" maxlength="3" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                <p> Digite o nome do dono do cartão:</p>
+                <input name="nomeCartaoCD" type="text" placeholder="Exatamente como consta no cartão">      
+            <a href="#ConfirmaDados" rel="modal"><input type="button" value="Realizar recarga" onclick="VerificaRecarga(form)"></a>          
+        </div>  
+    </div>
+ <!-- PARTE 3 CONFIRMACAO DOS DADOS -->
+<div class="window" id="ConfirmaDados">
+    <div class="loginbox">
+    <h1>Confirma os dados a seguir?</h1>               
             <p>
-            <?php echo "Recarga no valor de: <strong>$valor</strong> <br>Cartão-passe número: <strong>$codcartao</strong> <br>Cartão de crédito/débito número: <strong>$codcartaoCD</strong>";?>
+            Recarga no valor de: <label name="txtvalor" value=""> </label> <br>Cartão-passe número: <label name="txtcod" value="">  </label> <br>Cartão de crédito/débito número: <strong name="cod">  </strong>";
             </p>
-        </form>
-
-           <input type="submit" value="Confirmar recarga">
-           <a href="logado.php"><input type="submit" value="Cancelar"></a>
-        </form>
-    
+            
+           <input type="button" value="Confirmar recarga">
+           <a href="logado.php"><input type="submit" value="Cancelar">   
     </div>  
 </div>
+</form>
 
-        <!-- PARTE 3 CONFIRMACAO DOS DADOS -->
+       
 
 
 

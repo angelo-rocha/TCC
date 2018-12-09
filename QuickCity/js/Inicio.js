@@ -126,3 +126,39 @@ function MaskCpf(cpf){
         
   }
 }
+
+
+function VerificaRecarga(form)
+{
+   var codCartao = form.codCartao.value;
+   var recarga = form.valorBand.value;
+   var tipo = form.tipoBand.value;
+   var cartao = form.codCartaoCD.value;
+   var data = form.valCartaoCD.value;
+   var cvv = form.cvvCartaoCD.value;
+   var nome = form.nomeCartaoCD.value;
+
+
+   if(!codCartao)
+   {alert("Preencha o código do cartão");}
+   else if(!recarga)
+   {alert("Escolha o valor da recarga");}
+   else if(!tipo)
+   {alert("Escola o tipo do cartão");}
+   else if(!cartao)
+   {alert("Preencha o número do cartão");}
+   else if(!data)
+   {alert("Preencha a data do cartão");}
+   else if(!cvv)
+   {alert("Preencha o CVV");}
+   else if(!nome)
+   {alert("Preencha o nome");}
+   else
+   {
+     form.submit();
+   }
+   
+   
+
+
+}
