@@ -82,7 +82,6 @@
 <div class="window" id="consultaSaldo">
 <div class="loginbox">
         <h1>Consulte seu saldo</h1>
-        <form name="form" action="php/recarga.php" method="POST">
             <p>Digite o código do cartão-passe:</p>
             <input name="codCartao" type="text" placeholder="Exemplo: 654321" maxlength="6" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
             <div>
@@ -95,10 +94,22 @@
 
 <div class="window" id="saldoAtual">
 <div class="loginbox">
-        <h1>Seu saldo é de R$ $saldo</h1>
-           <input type="button" value="Ok" onclick="logado.php">
+        <h1>Seu saldo é de R$ $saldo:</h1>
+
+           <input type="button" value="Ok">
         </div>
-                  
+                 
+        <?php
+           $conn = mysqli_connect("localhost", "root", "","db_quickcity");
+
+           $email = $_POST['codOnibus'];
+           $result = mysqli_query($conn ,"SELECT Sum(valor) FROM recarga WHERE cartaoOnibus='111111'");
+           $reg = mysqli_fetch_array($result);
+           
+             echo $reg['valor'];
+           
+              
+        ?> 
         </div>  
     </div>
 
