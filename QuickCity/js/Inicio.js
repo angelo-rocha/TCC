@@ -128,37 +128,113 @@ function MaskCpf(cpf){
 }
 
 
-function VerificaRecarga(form)
+function VerificaRecarga1(form)
 {
    var codCartao = form.codCartao.value;
    var recarga = form.valorBand.value;
    var tipo = form.tipoBand.value;
+
+   if(codCartao.length < 6 && codCartao)
+   {
+    alert("Código do cartão deve ter 6 digitos");
+    return false; 
+   }
+   if(!codCartao)
+   {
+     alert("Preencha o código do cartão");
+     form.codCartao.focus();
+     return false;
+  }
+   else if(!recarga)
+   {alert("Escolha o valor da recarga");
+  return false;}
+   else if(!tipo)
+   {alert("Escola o tipo do cartão");
+  return false;}
+  else
+  { 
+         
+         var id = $(this).attr("DadosCartao");
+         var alturaTela = $(document).height();
+        var larguraTela = $(window).width();
+         //colocando o fundo preto
+        $('#mascara').css({'width':larguraTela,'height':alturaTela});
+        $('#mascara').fadeIn(1000);	
+        $('#mascara').fadeTo("slow",0.8);
+         var left = ($(window).width() /2) - ( $(id).width() / 2 );
+        var top = ($(window).height() / 2) - ( $(id).height() / 2 );
+        
+        $(id).css({'top':top,'left':left});
+        $(id).show();	
+       
+        $("#mascara").click( function(){
+         $(this).hide();
+         $(".window").hide();
+       });
+        $('.fechar').click(function(ev){
+         ev.preventDefault();
+         $("#mascara").hide();
+         $(".window").hide();
+       });  
+  }
+
+
+}
+
+function VerificaRecarga2(form)
+{
    var cartao = form.codCartaoCD.value;
    var data = form.valCartaoCD.value;
    var cvv = form.cvvCartaoCD.value;
    var nome = form.nomeCartaoCD.value;
 
 
-   if(!codCartao)
-   {alert("Preencha o código do cartão");}
-   else if(!recarga)
-   {alert("Escolha o valor da recarga");}
-   else if(!tipo)
-   {alert("Escola o tipo do cartão");}
-   else if(!cartao)
-   {alert("Preencha o número do cartão");}
+   if(!cartao)
+   {alert("Preencha o número do cartão");
+   form.cartao.focus();
+   return false;}
    else if(!data)
-   {alert("Preencha a data do cartão");}
+   {alert("Preencha a data do cartão");
+   form.data.focus();
+   return false;}
    else if(!cvv)
-   {alert("Preencha o CVV");}
+   {alert("Preencha o CVV");
+   form.cvv.focus();
+   return false;}
    else if(!nome)
-   {alert("Preencha o nome");}
+   {alert("Preencha o nome");
+   return false;}
    else
    {
-     form.submit();
+     
+    var id = $(this).attr("ConfirmaDados");
+    var alturaTela = $(document).height();
+   var larguraTela = $(window).width();
+    //colocando o fundo preto
+   $('#mascara').css({'width':larguraTela,'height':alturaTela});
+   $('#mascara').fadeIn(1000);	
+   $('#mascara').fadeTo("slow",0.8);
+    var left = ($(window).width() /2) - ( $(id).width() / 2 );
+   var top = ($(window).height() / 2) - ( $(id).height() / 2 );
+   
+   $(id).css({'top':top,'left':left});
+   $(id).show();	
+  
+   $("#mascara").click( function(){
+    $(this).hide();
+    $(".window").hide();
+  });
+   $('.fechar').click(function(ev){
+    ev.preventDefault();
+    $("#mascara").hide();
+    $(".window").hide();
+  });
+  
    }
-   
-   
 
+}
 
+function recarga(form)
+{
+  form.submit();
 }

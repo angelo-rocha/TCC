@@ -114,7 +114,7 @@
             </fieldset>
         
         <div>
-            <a href="#DadosCartao" rel="modal"><input type="submit" value="Prosseguir"></a>
+           <input type="button" value="Prosseguir" onclick="VerificaRecarga1(form)">
         </div>
     
     </div>  
@@ -133,19 +133,16 @@
                 <input name="cvvCartaoCD" type="text" placeholder="Exemplo: 000" maxlength="3" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
                 <p> Digite o nome do dono do cartão:</p>
                 <input name="nomeCartaoCD" type="text" placeholder="Exatamente como consta no cartão">      
-            <a href="#ConfirmaDados" rel="modal"><input type="button" value="Realizar recarga" onclick="VerificaRecarga(form)"></a>          
+             <input type="button" value="Realizar recarga" onclick="VerificaRecarga2(form)">       
         </div>  
     </div>
  <!-- PARTE 3 CONFIRMACAO DOS DADOS -->
 <div class="window" id="ConfirmaDados">
     <div class="loginbox">
     <h1>Confirma os dados a seguir?</h1>               
-            <p>
-            Recarga no valor de: <label name="txtvalor" value=""> </label> <br>Cartão-passe número: <label name="txtcod" value="">  </label> <br>Cartão de crédito/débito número: <strong name="cod">  </strong>";
-            </p>
             
-           <input type="button" value="Confirmar recarga">
-           <a href="logado.php"><input type="submit" value="Cancelar">   
+           <input type="button" value="Confirmar recarga" onclick="recarga(form)">
+           <a href="logado.php"><input type="button" value="Cancelar">   
     </div>  
 </div>
 </form>

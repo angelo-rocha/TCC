@@ -26,6 +26,10 @@ $nome = $_POST['nomeCartaoCD'];
 if (($codOnibus == "") || ($valor == "") || ($tipoCartao == "") || ($data == "") || ($cvv=="") || ($nome =="") ){
     exit('<script>location.href = "http://localhost/xampp/TCC/QuickCity/init.html"</script>');
 } else {
+    session_start();
+    $_SESSION['valor'] = $valor;
+    $_SESSION['passe'] = $codOnibus;
+    $_SESSION['cartao'] = $codCartao;
 
 $conn = conectar();
  $teste="INSERT INTO recarga (cartaoOnibus,valor,tipo,CartaoBanco,validadeCartao,cvv,dono) VALUES('$codOnibus','$valor','$tipoCartao','$codCartao','$data','$cvv','$nome')";
