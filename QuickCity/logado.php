@@ -78,6 +78,30 @@
 
 <!-- MODAIS -->
 <div id="mascara"></div>
+
+<div class="window" id="consultaSaldo">
+<div class="loginbox">
+        <h1>Consulte seu saldo</h1>
+        <form name="form" action="php/recarga.php" method="POST">
+            <p>Digite o código do cartão-passe:</p>
+            <input name="codCartao" type="text" placeholder="Exemplo: 654321" maxlength="6" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+            <div>
+            <a href="#saldoAtual" rel="modal"> <input type="button" value="Consultar"></a>
+        </div>
+                  
+        </div>  
+    </div>
+
+
+<div class="window" id="saldoAtual">
+<div class="loginbox">
+        <h1>Seu saldo é de R$ $saldo</h1>
+           <input type="button" value="Ok" onclick="logado.php">
+        </div>
+                  
+        </div>  
+    </div>
+
 <div class="window" id="Recarregar">
 <div class="loginbox">
     <h1>Recarregar agora</h1>
@@ -159,7 +183,7 @@
     <div class="botoes">
             <a href="https://editor.mobilibus.com/web/timetable/27b4n"><input type="button" value="Consulte sua rota aqui"></a>
             <a href="#Recarregar" rel="modal"><input type="button" value="Realize sua recarga aqui"></a>  <!--AQUI TAMBÉM-->
-            <a href="#Saldo"><input type="button" value="Consulte seu saldo aqui"></a>                    <!--AQUI SERÁ UM MODAL-->
+            <a href="#consultaSaldo" rel="modal"><input type="button" value="Consulte seu saldo aqui"></a>                    <!--AQUI SERÁ UM MODAL-->
         </div>
 
          <div class="window" id="Recarga">
