@@ -153,7 +153,8 @@ function VerificaRecarga1(form)
   return false;}
   else
   { 
-         
+    form.cartao.value = codCartao; 
+    form.valor.value = recarga;  
          var id = $(this).attr("DadosCartao");
          var alturaTela = $(document).height();
         var larguraTela = $(window).width();
@@ -206,6 +207,7 @@ function VerificaRecarga2(form)
    return false;}
    else
    {
+    form.usuario.value = nome;
      
     var id = $(this).attr("ConfirmaDados");
     var alturaTela = $(document).height();
