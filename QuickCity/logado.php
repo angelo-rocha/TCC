@@ -39,7 +39,7 @@
         <?php echo "Seja Bem vindo, <strong>$nome</strong>";?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Recargas Efetuadas</a>
+          <a class="dropdown-item" href="tabela.html" target="_blank">Recargas Efetuadas</a>
           <a class="dropdown-item" href="init.html">Sair</a>
         </div>
       </li>
@@ -228,8 +228,5 @@
                 </form>
                 </div>
             </div>  
-        
-
-        
 </body>
 </html>
