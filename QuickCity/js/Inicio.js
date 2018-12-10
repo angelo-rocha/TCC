@@ -240,3 +240,18 @@ function recarga(form)
 {
   form.submit();
 }
+
+function Pegacod()
+        {   
+         var cod = document.getElementById('codigo').value;
+         var input = document.getElementById('saldo');
+            $.post('php/saldo.php', {
+           codigo: cod
+              }, function(response){
+                if(response == 0)
+                input.value = 'Número de cartão inválido';
+                else
+                input.value = response+',00 R$';
+        });
+       
+        }

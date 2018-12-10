@@ -81,34 +81,40 @@
 <div class="window" id="consultaSaldo">
 <div class="saldobox">
         <h1>Consulte seu saldo</h1>
-            <p>Digite o código do cartão-passe:</p>
-            <input name="codCartao" type="text" placeholder="Exemplo: 654321" maxlength="6" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+            <p>Digite o código do cartão-passe:</p>          
+           <input id="codigo" type="text" placeholder="Exemplo: 654321" maxlength="6" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
             <div>
-            <a href="#saldoAtual" rel="modal"> <input type="button" value="Consultar"></a>
+            <a href="#saldoAtual" rel="modal"> <input type="button" value="Consultar" onclick="Pegacod()"></a>
         </div>
-                  
-        </div>  
+         </div>  
+        <script>
+        function Pegacod()
+        {   
+         var cod = document.getElementById('codigo').value;
+         var input = document.getElementById('saldo');
+            $.post('php/saldo.php', {
+           codigo: cod
+              }, function(response){
+                if(response == 0)
+                input.value = 'Número de cartão inválido';
+                else
+                input.value = response+',00 R$';
+        });
+       
+        }
+        </script>
     </div>
 
 
 <div class="window" id="saldoAtual">
 <div class="saldobox">
-        <h1>Seu saldo é de R$ $saldo:</h1>
 
-           <input type="button" value="Ok">
+       <h1>Saldo atual:</h1>  
+       <input id="saldo" type="text" disabled>
+        <a href="logado.php" > <input type="button" value="Ok"></a>
         </div>
                  
-        <?php
-           $conn = mysqli_connect("localhost", "root", "","db_quickcity");
-
-           $email = $_POST['codOnibus'];
-           $result = mysqli_query($conn ,"SELECT Sum(valor) FROM recarga WHERE cartaoOnibus='111111'");
-           $reg = mysqli_fetch_array($result);
-           
-             echo $reg['valor'];
-           
-              
-        ?> 
+      
         </div>  
     </div>
 
