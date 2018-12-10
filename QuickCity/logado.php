@@ -40,7 +40,6 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Recargas Efetuadas</a>
-          <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="init.html">Sair</a>
         </div>
       </li>
@@ -80,7 +79,7 @@
 <div id="mascara"></div>
 
 <div class="window" id="consultaSaldo">
-<div class="loginbox">
+<div class="saldobox">
         <h1>Consulte seu saldo</h1>
             <p>Digite o código do cartão-passe:</p>
             <input name="codCartao" type="text" placeholder="Exemplo: 654321" maxlength="6" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
@@ -93,7 +92,7 @@
 
 
 <div class="window" id="saldoAtual">
-<div class="loginbox">
+<div class="saldobox">
         <h1>Seu saldo é de R$ $saldo:</h1>
 
            <input type="button" value="Ok">
@@ -114,7 +113,7 @@
     </div>
 
 <div class="window" id="Recarregar">
-<div class="loginbox">
+<div class="recargabox">
     <h1>Recarregar agora</h1>
         <form name="form" action="php/recarga.php" method="POST">
             <p>Digite o código do cartão-passe:</p>
@@ -157,7 +156,7 @@
 
         <!-- PARTE 2 DADOS DO CARTAO --> 
         <div class="window" id="DadosCartao">
-<div class="loginbox">
+<div class="recargabox">
         <h1>Recarregar agora</h1>
            
                 <p>Digite o número do cartão de débito/crédito sem espaço:</p>
@@ -173,7 +172,7 @@
     </div>
  <!-- PARTE 3 CONFIRMACAO DOS DADOS -->
 <div class="window" id="ConfirmaDados">
-    <div class="loginbox">
+    <div class="recargabox">
     <h1>Confirma os dados a seguir?</h1>               
             <p> Nome do usuário: </p><input type="text" value="" name="usuario" disabled>
             <p> Valor da recarga:</p><input type="text" value="" name="valor" disabled>
@@ -192,7 +191,7 @@
 
     <!-- BOTOES REFERENTE A TELA LOGADO -->
     <div class="botoes">
-            <a href="https://editor.mobilibus.com/web/timetable/27b4n"><input type="button" value="Consulte sua rota aqui"></a>
+            <a href="https://editor.mobilibus.com/web/timetable/27b4n" target="_blank"><input type="button" value="Consulte sua rota aqui"></a>
             <a href="#Recarregar" rel="modal"><input type="button" value="Realize sua recarga aqui"></a>  <!--AQUI TAMBÉM-->
             <a href="#consultaSaldo" rel="modal"><input type="button" value="Consulte seu saldo aqui"></a>                    <!--AQUI SERÁ UM MODAL-->
         </div>
