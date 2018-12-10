@@ -39,7 +39,7 @@
         <?php echo "Seja Bem vindo, <strong>$nome</strong>";?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="tabela.html" target="_blank">Recargas Efetuadas</a>
+          <a class="dropdown-item" href="tabela.php" target="_blank">Recargas Efetuadas</a>
           <a class="dropdown-item" href="init.html">Sair</a>
         </div>
       </li>
@@ -87,22 +87,6 @@
             <a href="#saldoAtual" rel="modal"> <input type="button" value="Consultar" onclick="Pegacod()"></a>
         </div>
          </div>  
-        <script>
-        function Pegacod()
-        {   
-         var cod = document.getElementById('codigo').value;
-         var input = document.getElementById('saldo');
-            $.post('php/saldo.php', {
-           codigo: cod
-              }, function(response){
-                if(response == 0)
-                input.value = 'Número de cartão inválido';
-                else
-                input.value = response+',00 R$';
-        });
-       
-        }
-        </script>
     </div>
 
 
@@ -180,7 +164,7 @@
 <div class="window" id="ConfirmaDados">
     <div class="recargabox">
     <h1>Confirma os dados a seguir?</h1>               
-            <p> Nome do usuário: </p><input type="text" value="" name="usuario" disabled>
+            <p> Nome: </p><input type="text" value="" name="usuario" disabled>
             <p> Valor da recarga:</p><input type="text" value="" name="valor" disabled>
             <p> Cartão do Passe:</p><input type="text" value="" name="cartao" disabled>
          
